@@ -48,4 +48,5 @@ body {
     font-size: 30px;
     text-align: center;
     margin: 0;
+    text-transform: capitalize;
 }
