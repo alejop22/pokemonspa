@@ -3,7 +3,10 @@ let button = document.getElementById('btn');
 
 
 button.addEventListener('click',() => {
-    let input = document.getElementById('input').value;
+    let input = Number(document.getElementById('input').value);
+    if (isNaN(input)) {
+        input = document.getElementById('input').value;
+    }
     let img = document.getElementById('img');
     let pokeName = document.getElementById('pokeName');
     let xhttp = new XMLHttpRequest();
@@ -13,8 +16,13 @@ button.addEventListener('click',() => {
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             let datoPokemon = JSON.parse(this.responseText);
-            img.setAttribute("src",datoPokemon.sprites.front_default);
-            pokeName.textContent = (datoPokemon.name)
+            if (typeof(input) !== "string") {
+                img.setAttribute("src",datoPokemon.sprites.front_default);
+                pokeName.textContent = (datoPokemon.name)
+            } else {
+                img.setAttribute("src",datoPokemon.sprites.front_default);
+                pokeName.textContent = (datoPokemon.id)
+            } 
         }
     }
 })
