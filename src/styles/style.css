@@ -8,7 +8,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     height: 500px;
 }
 
@@ -29,4 +28,23 @@ body {
     width: 150px;
     height: 30px;
     cursor: pointer;
+    border: 2px solid #b5172f;
+    border-radius: 15px;
+    outline: none;
+}
+
+.main--button button:hover {
+    background-color: #b5172f;
+    color: white;
+}
+
+.pokemon img {
+    height: 150px;
+}
+
+.pokemon p {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
 }
